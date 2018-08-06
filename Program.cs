@@ -13,12 +13,18 @@ namespace Interfaces
             r1.UpdateValue(10);
             s1 = r1.Roman;
             i1 = r1.GetValue();
+            r1.UpdateValue("III");
+            s1 = r1.Roman;
+            i1 = r1.GetValue();
             BinNumber b1 = new BinNumber(1);
             int i2 = b1.GetValue();
             string s2 = b1.Bin;
             b1.UpdateValue(5);
             s2 = b1.Bin;
-            i2 = b1.GetValue();            
+            i2 = b1.GetValue();
+            b1.UpdateValue("11011");
+            s2 = b1.Bin;
+            i2 = b1.GetValue();
         }
     }
 }

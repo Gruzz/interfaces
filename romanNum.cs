@@ -179,5 +179,11 @@ namespace romanNumbers
             dec = newVal;
             roman = ConvertToRoman(newVal);
         }
+
+        public void UpdateValue(string newVal)
+        {
+            dec = ConvertToDec(newVal);
+            roman = newVal;
+        }
     }
 }

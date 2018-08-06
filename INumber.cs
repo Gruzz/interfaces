@@ -17,6 +17,7 @@ namespace Interfaces
         /// Set new integer value of a number
         /// </summary>
         /// <param name="newVal"></param>
-        void UpdateValue(int newVal);        
+        void UpdateValue(int newVal);
+        void UpdateValue(string newVal);
     }
 }

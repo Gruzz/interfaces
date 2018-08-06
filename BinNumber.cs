@@ -5,6 +5,7 @@ namespace Interfaces
 {
     class BinNumber : INumber
     {
+
         public BinNumber(int a) { bin = getBin(a); dec = a; }
         public BinNumber(string a) { bin = a; dec = getDec(a); }
         //field for integer representation of number
@@ -70,6 +71,12 @@ namespace Interfaces
         {
             dec = newVal;
             bin = getBin(newVal);
+        }
+
+        public void UpdateValue(string newVal)
+        {
+            dec = getDec(newVal);
+            bin = newVal;
         }
     }
 }
