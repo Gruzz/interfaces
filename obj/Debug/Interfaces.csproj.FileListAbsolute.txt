@@ -1,0 +1,9 @@
+c:\users\apatyaev\source\repos\Interfaces\Interfaces\bin\Debug\Interfaces.exe.config
+c:\users\apatyaev\source\repos\Interfaces\Interfaces\bin\Debug\Interfaces.exe
+c:\users\apatyaev\source\repos\Interfaces\Interfaces\bin\Debug\Interfaces.pdb
+c:\users\apatyaev\source\repos\Interfaces\Interfaces\obj\Debug\Interfaces.csprojAssemblyReference.cache
+c:\users\apatyaev\source\repos\Interfaces\Interfaces\obj\Debug\Interfaces.ExeptionRes.resources
+c:\users\apatyaev\source\repos\Interfaces\Interfaces\obj\Debug\Interfaces.csproj.GenerateResource.cache
+c:\users\apatyaev\source\repos\Interfaces\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
+c:\users\apatyaev\source\repos\Interfaces\Interfaces\obj\Debug\Interfaces.exe
+c:\users\apatyaev\source\repos\Interfaces\Interfaces\obj\Debug\Interfaces.pdb

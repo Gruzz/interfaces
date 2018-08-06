@@ -1,20 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using romanNumbers;
 
 namespace Interfaces
 {
-    class BinNumber
+    class BinNumber : INumber
     {
+        public BinNumber(int a) { bin = getBin(a); dec = a; }
+        public BinNumber(string a) { bin = a; dec = getDec(a); }
+        //field for integer representation of number
+        private int dec;
+        public int Dec
+        {
+            get { return dec; }
+            set
+            {
+                dec = value;
+                bin = getBin(dec);
+            }
+        }
+        //field for binary representation of number
+        private string bin;
+        public string Bin
+        {
+            get { return bin; }
+            private set { bin = value; dec = getDec(bin); }
+        }
         /// <summary>
         /// convert decimal to binary
         /// </summary>
         /// <param name="decIn">decimal number</param>
         /// <returns></returns>
-        static string getBin(int decIn)
+        private static string getBin(int decIn)
         {
             char[] bin = new char[sizeof(int) * 8];
             for (int i = 31; i >= 0; i--)
@@ -32,7 +48,7 @@ namespace Interfaces
         /// </summary>
         /// <param name="binToDec">binary number</param>
         /// <returns></returns>
-        static int getDec(string binToDec)
+        private static int getDec(string binToDec)
         {
             if ((binToDec == null)||(binToDec == ""))
                 throw new ExeptionRomanNumber(ExeptionRes.nullOrEmpty);
@@ -43,6 +59,17 @@ namespace Interfaces
                 if (i != binToDec.Length - 1) res <<= 1;
             }
             return res;
+        }
+
+        public int GetValue()
+        {
+           return dec;
+        }
+
+        public void UpdateValue(int newVal)
+        {
+            dec = newVal;
+            bin = getBin(newVal);
         }
     }
 }

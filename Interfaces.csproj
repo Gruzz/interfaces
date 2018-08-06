@@ -45,6 +45,7 @@
     <Compile Include="BinNumber.cs" />
     <Compile Include="ExeptionRes.Designer.cs" />
     <Compile Include="ExeptionRomanNumbers.cs" />
+    <Compile Include="INumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="romanNum.cs" />

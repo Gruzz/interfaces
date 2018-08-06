@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using romanNumbers;
 
 namespace Interfaces
 {
@@ -10,7 +7,18 @@ namespace Interfaces
     {
         static void Main(string[] args)
         {
-            
+            RomanNum r1 = new RomanNum(2);
+            int i1 = r1.GetValue();
+            string s1 = r1.Roman;
+            r1.UpdateValue(10);
+            s1 = r1.Roman;
+            i1 = r1.GetValue();
+            BinNumber b1 = new BinNumber(1);
+            int i2 = b1.GetValue();
+            string s2 = b1.Bin;
+            b1.UpdateValue(5);
+            s2 = b1.Bin;
+            i2 = b1.GetValue();            
         }
     }
 }

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Interfaces;
 
 namespace romanNumbers
 {
-    public class RomanNum
+    public class RomanNum : INumber
     {
         public RomanNum(int a) { roman = ConvertToRoman(a); dec = a; }
+        public RomanNum(string a) { roman = a; dec = ConvertToDec(a); }
         //field for integer representation of number
         private int dec;
         public int Dec
@@ -23,14 +25,14 @@ namespace romanNumbers
         public string Roman
         {
             get { return roman; }
-            private set { roman = value; }
+            private set { roman = value; dec = ConvertToDec(roman); }
         }
         /// <summary>
         /// convert roman number to integer
         /// </summary>
         /// <param name="value"> roman number </param>
         /// <returns></returns>
-        public static int ConvertToDec(string value)
+        private static int ConvertToDec(string value)
         {
             if ((value == null) || (value.Length == 0))
                 throw new ExeptionRomanNumber(ExeptionRes.nullOrEmpty);
@@ -68,7 +70,7 @@ namespace romanNumbers
         /// </summary>
         /// <param name="decNum"> integer number</param>
         /// <returns></returns>
-        public static string ConvertToRoman(int decNum)
+        private static string ConvertToRoman(int decNum)
         {
             string romNum = "";
             if ((decNum < 1) || (decNum > 3999))
@@ -166,6 +168,16 @@ namespace romanNumbers
                 default:
                     throw new ExeptionRomanNumber(String.Format(ExeptionRes.unsupportedChar, ch));
             }
+        }
+
+        public int GetValue()
+        {
+            return dec;
+        }
+        public void UpdateValue(int newVal)
+        {
+            dec = newVal;
+            roman = ConvertToRoman(newVal);
         }
     }
 }
