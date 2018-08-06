@@ -53,9 +53,13 @@ namespace Interfaces
         {
             if ((binToDec == null)||(binToDec == ""))
                 throw new ExeptionRomanNumber(ExeptionRes.nullOrEmpty);
+            if (binToDec.Length > 32)
+                throw new ExeptionRomanNumber(ExeptionRes.longString);
             int res = 0;
             for (int i = 0; i < binToDec.Length; i++)
             {
+                if ((binToDec[i] != '1')&&(binToDec[i] != '0'))
+                    throw new ExeptionRomanNumber(String.Format(ExeptionRes.unsupportedChar, binToDec[i]));
                 if (binToDec[i] == '1') res += 1;
                 if (i != binToDec.Length - 1) res <<= 1;
             }

@@ -44,6 +44,11 @@
   <ItemGroup>
     <Compile Include="BinNumber.cs" />
     <Compile Include="ExeptionRes.Designer.cs" />
+    <Compile Include="ExeptionRes1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExeptionRes.resx</DependentUpon>
+    </Compile>
     <Compile Include="ExeptionRomanNumbers.cs" />
     <Compile Include="INumber.cs" />
     <Compile Include="Program.cs" />
@@ -54,7 +59,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ExeptionRes.resx" />
+    <EmbeddedResource Include="ExeptionRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExeptionRes1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

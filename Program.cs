@@ -22,7 +22,7 @@ namespace Interfaces
             b1.UpdateValue(5);
             s2 = b1.Bin;
             i2 = b1.GetValue();
-            b1.UpdateValue("11011");
+            b1.UpdateValue("1101h1");
             s2 = b1.Bin;
             i2 = b1.GetValue();
         }
