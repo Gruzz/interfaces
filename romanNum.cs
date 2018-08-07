@@ -8,6 +8,7 @@ namespace romanNumbers
 {
     public class RomanNum : INumber
     {
+        public RomanNum() { roman = "I"; dec = 1; }
         public RomanNum(int a) { roman = ConvertToRoman(a); dec = a; }
         public RomanNum(string a) { roman = a; dec = ConvertToDec(a); }
         //field for integer representation of number
@@ -15,7 +16,7 @@ namespace romanNumbers
         public int Dec
         {
             get { return dec; }
-            set {               
+            private set {               
                 dec = value;
                 roman = ConvertToRoman(dec);
             }
@@ -35,7 +36,7 @@ namespace romanNumbers
         private static int ConvertToDec(string value)
         {
             if ((value == null) || (value.Length == 0))
-                throw new ExeptionRomanNumber(ExeptionRes.nullOrEmpty);
+                throw new ExeptionRomanNumber(Interfaces.ExeptionRes.nullOrEmpty);
             int res = 0;
             int currentChar = 0;
             // current max roman number 
@@ -62,7 +63,7 @@ namespace romanNumbers
             }
             // check for correct roman number
             if (value.ToUpper() != ConvertToRoman(res))
-                throw new ExeptionRomanNumber(string.Format(ExeptionRes.IncorrectNumber, ConvertToRoman(res), res, value));
+                throw new ExeptionRomanNumber(string.Format(Interfaces.ExeptionRes.IncorrectNumber, ConvertToRoman(res), res, value));
             return res;
         }
         /// <summary>
@@ -74,7 +75,7 @@ namespace romanNumbers
         {
             string romNum = "";
             if ((decNum < 1) || (decNum > 3999))
-                throw new ExeptionRomanNumber(ExeptionRes.wrongRange);
+                throw new ExeptionRomanNumber(Interfaces.ExeptionRes.wrongRange);
             var romanMap = new List<KeyValuePair<int, string>>()
             {
                 new KeyValuePair<int, string>(1, "I"),
@@ -113,12 +114,12 @@ namespace romanNumbers
             //check for more than 3 in row identical characters 
             if ((prev.Length >= 3) && ((prev[0] == prev[1]) && (prev[1] == prev[2]) && (prev[2] == currentChar)))
             {
-                throw new ExeptionRomanNumber(ExeptionRes.treeInARow);
+                throw new ExeptionRomanNumber(Interfaces.ExeptionRes.treeInARow);
             }
             // check for correct rules of subtraction
             if ((currentChar < max) && ((prev[0] != max) || (currentChar == 5) || (currentChar == 50) || (currentChar == 500)))
             {
-                throw new ExeptionRomanNumber(ExeptionRes.wrong);
+                throw new ExeptionRomanNumber(Interfaces.ExeptionRes.wrong);
             }
             //update array
             for (int i2 = prev.Length - 1; i2 > 0; i2--)
@@ -166,7 +167,7 @@ namespace romanNumbers
                     return 1000;
                     break;
                 default:
-                    throw new ExeptionRomanNumber(String.Format(ExeptionRes.unsupportedChar, ch));
+                    throw new ExeptionRomanNumber(String.Format(Interfaces.ExeptionRes.unsupportedChar, ch));
             }
         }
 
