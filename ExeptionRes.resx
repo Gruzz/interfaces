@@ -124,7 +124,7 @@
     <value>String can not be longer than 32 characters</value>
   </data>
   <data name="notAnumber" xml:space="preserve">
-    <value>String is not a number</value>
+    <value>String is not a number or out of range</value>
   </data>
   <data name="nullOrEmpty" xml:space="preserve">
     <value>Value cannot be null or empty.</value>

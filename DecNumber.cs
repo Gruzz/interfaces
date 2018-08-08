@@ -5,8 +5,8 @@ namespace Interfaces
 {
     public class DecNumber : INumber
     {
-        public DecNumber() { dec = 0; }
-        public DecNumber(int val) { dec = val; }
+        public DecNumber() { dec = 0; str = "0"; }
+        public DecNumber(int val) { dec = val; str = val.ToString(); }        
         private int dec;
         private string str;
         public int GetValue()
@@ -21,10 +21,12 @@ namespace Interfaces
         public void UpdateValue(string newVal)
         {
             int val = 0;
-            if (Int32.TryParse(str, out val))
+            if ((newVal == null) || (newVal == ""))
+                throw new ExeptionRomanNumber(Interfaces.ExeptionRes.nullOrEmpty);
+            if (Int32.TryParse(newVal, out val))
             {
                 str = newVal;
-                dec = Int32.Parse(str);
+                dec = Int32.Parse(newVal);
             }
             else
                 throw new ExeptionRomanNumber(Interfaces.ExeptionRes.notAnumber);

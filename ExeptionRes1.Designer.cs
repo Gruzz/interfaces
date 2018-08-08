@@ -79,7 +79,7 @@ namespace Interfaces {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to String is not a number.
+        ///   Looks up a localized string similar to String is not a number or out of range.
         /// </summary>
         public static string notAnumber {
             get {
