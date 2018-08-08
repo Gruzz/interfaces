@@ -13,6 +13,7 @@ namespace Interfaces
         /// </summary>
         /// <returns></returns>
         int GetValue();
+        string GetStrValue();
         /// <summary>
         /// Set new integer value of a number
         /// </summary>

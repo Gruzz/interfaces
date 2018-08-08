@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinNumber.cs" />
+    <Compile Include="DecNumber.cs" />
     <Compile Include="ExeptionRes.Designer.cs" />
     <Compile Include="ExeptionRes1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -53,7 +54,7 @@
     <Compile Include="INumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="romanNum.cs" />
+    <Compile Include="RomNumber.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

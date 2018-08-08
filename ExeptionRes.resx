@@ -123,6 +123,9 @@
   <data name="longString" xml:space="preserve">
     <value>String can not be longer than 32 characters</value>
   </data>
+  <data name="notAnumber" xml:space="preserve">
+    <value>String is not a number</value>
+  </data>
   <data name="nullOrEmpty" xml:space="preserve">
     <value>Value cannot be null or empty.</value>
   </data>

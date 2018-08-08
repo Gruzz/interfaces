@@ -79,6 +79,15 @@ namespace Interfaces {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to String is not a number.
+        /// </summary>
+        public static string notAnumber {
+            get {
+                return ResourceManager.GetString("notAnumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Value cannot be null or empty..
         /// </summary>
         public static string nullOrEmpty {

@@ -82,5 +82,9 @@ namespace Interfaces
             dec = getDec(newVal);
             bin = newVal;
         }
+        public string GetStrValue()
+        {
+            return bin;
+        }
     }
 }

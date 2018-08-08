@@ -6,11 +6,11 @@ using Interfaces;
 
 namespace romanNumbers
 {
-    public class RomanNum : INumber
+    public class RomNumber : INumber
     {
-        public RomanNum() { roman = "I"; dec = 1; }
-        public RomanNum(int a) { roman = ConvertToRoman(a); dec = a; }
-        public RomanNum(string a) { roman = a; dec = ConvertToDec(a); }
+        public RomNumber() { roman = "I"; dec = 1; }
+        public RomNumber(int a) { roman = ConvertToRoman(a); dec = a; }
+        public RomNumber(string a) { roman = a; dec = ConvertToDec(a); }
         //field for integer representation of number
         private int dec;
         public int Dec
@@ -71,12 +71,7 @@ namespace romanNumbers
         /// </summary>
         /// <param name="decNum"> integer number</param>
         /// <returns></returns>
-        private static string ConvertToRoman(int decNum)
-        {
-            string romNum = "";
-            if ((decNum < 1) || (decNum > 3999))
-                throw new ExeptionRomanNumber(Interfaces.ExeptionRes.wrongRange);
-            var romanMap = new List<KeyValuePair<int, string>>()
+        private static List<KeyValuePair<int, string>> romanMap = new List<KeyValuePair<int, string>>()
             {
                 new KeyValuePair<int, string>(1, "I"),
                 new KeyValuePair<int, string>(4, "IV"),
@@ -92,6 +87,11 @@ namespace romanNumbers
                 new KeyValuePair<int, string>(900, "CM"),
                 new KeyValuePair<int, string>(1000, "M"),
             };
+        private static string ConvertToRoman(int decNum)
+        {
+            string romNum = "";
+            if ((decNum < 1) || (decNum > 3999))
+                throw new ExeptionRomanNumber(Interfaces.ExeptionRes.wrongRange);
             for (int i = romanMap.Count - 1; i >= 0; i--)
             {
                 while (decNum >= romanMap[i].Key)
@@ -185,6 +185,11 @@ namespace romanNumbers
         {
             dec = ConvertToDec(newVal);
             roman = newVal;
+        }
+
+        public string GetStrValue()
+        {
+            return roman;
         }
     }
 }
